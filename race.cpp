@@ -6,7 +6,7 @@ int x;
 
 
 void* worker(void* unused) {
-    x = rand();
+    x = rand() + 2;
     std::cout << x << "\n";
     return nullptr;
 }
