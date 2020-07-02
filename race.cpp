@@ -15,6 +15,7 @@ void* worker(void* unused) {
 
 
 int main() {
+    int unused;
     pthread_t th1, th2;
 
     pthread_create(&th1, nullptr, worker, nullptr);
