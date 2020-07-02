@@ -21,6 +21,10 @@ int main() {
     pthread_join(th1, nullptr);
     pthread_join(th2, nullptr);
 
+    int i;
+    int j = i + 4;
+    std::cout << j << "\n";
+
     return 0;
 }
 
