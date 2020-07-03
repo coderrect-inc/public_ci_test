@@ -3,10 +3,12 @@
 
 
 int x;
+int *z;
 
 
 void* worker(void* unused) {
-    x = rand() + 2;
+    *z = 20;
+    x = rand() + (*z);
     std::cout << x << "\n";
     return nullptr;
 }
