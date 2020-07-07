@@ -11,8 +11,20 @@ pipeline {
 
 	stages {
         stage('Build') {
+            when {
+                environment name: 'RUN_ANALYSIS', value: 'false'
+            }
             steps {
 		sh "make"
+            }
+        }
+
+        stage('BuildWithCoderrect') {
+            when {
+                environment name: 'RUN_ANALYSIS', value: 'true'
+            }
+            steps {
+                sh "coderrect make"
             }
         }
 
@@ -21,8 +33,7 @@ pipeline {
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps {
-                sh label: '', returnStatus: true, script: 'cppcheck . --xml --language=c++ --enable=all 2> cppcheck-result.xml'
-                publishCppcheck allowNoReport: true, ignoreBlankFiles: true, pattern: '**/cppcheck-result.xml'
+                echo "hello world"
             }
         }
 	}
