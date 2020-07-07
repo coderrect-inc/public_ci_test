@@ -24,6 +24,7 @@ pipeline {
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps {
+                sh "make clean"
                 sh "coderrect make"
             }
         }
