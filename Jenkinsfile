@@ -34,7 +34,7 @@ pipeline {
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps {
-                publishCoderect
+                echo "hello world"
             }
         }
 	}
