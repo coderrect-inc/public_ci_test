@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                 echo "hello world"
-                publishCppcheck
+                publishCppcheck "hello"
             }
         }
 	}
