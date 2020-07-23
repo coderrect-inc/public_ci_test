@@ -39,8 +39,8 @@ pipeline {
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
                     reportDir: '.coderrect/report',
-                    reportFiles: 'index.html',
-                    reportName: 'Coderrect_race_report',
+                    reportFiles: '_home_jsong_.jenkins_workspace_store_test_master_race.html',
+                    reportName: 'Coderrect race report',
                     includes: '**/*',
                     reportTitles: 'The Coderrect Race Report']
                 )
