@@ -34,8 +34,16 @@ pipeline {
                 environment name: 'RUN_ANALYSIS', value: 'true'
             }
             steps {
-                echo "hello world"
                 publishCoderrect "true"
+                publishHTML (target : [allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: '.coderrect/report',
+                    reportFiles: 'index.html',
+                    reportName: 'Coderrect_race_report',
+                    includes: '**/*',
+                    reportTitles: 'The Coderrect Race Report']
+                )
             }
         }
 	}
