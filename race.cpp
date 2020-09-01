@@ -5,6 +5,7 @@
 int x;
 int *z;
 
+int k;
 
 void* worker(void* unused) {
     *z = 20;
@@ -15,7 +16,7 @@ void* worker(void* unused) {
 
 
 void* worker2(void* unused) {
-    int k = rand();
+    k = rand();
     std::cout << k << "\n";
     return nullptr;
 }
